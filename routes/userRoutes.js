@@ -5,6 +5,6 @@ const { protect } = require('../middleware/authMiddleware');
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
-router.get('/search', protect, searchUsers); // Protected route for searching users
+router.get('/search', protect, searchUsers); 
 
 module.exports = router;
