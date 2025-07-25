@@ -14,7 +14,7 @@ const ExpenseSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Food', 'Travel', 'Accommodation', 'Shopping', 'Others'] // Example categories
+    enum: ['Food', 'Travel', 'Accommodation', 'Shopping', 'Others'] 
   },
   payer: {
     type: mongoose.Schema.Types.ObjectId,
@@ -26,15 +26,13 @@ const ExpenseSchema = new mongoose.Schema({
     ref: 'Group',
     required: true
   },
-  // This can be used for more complex splitting, for equal split, just divide amount by members.length
-  // For now, we'll calculate on the fly for equal split, but this field is good for future
   splitDetails: [{
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
     },
     share: {
-      type: Number, // The amount this user owes
+      type: Number, 
       default: 0
     }
   }],
